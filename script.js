@@ -28,3 +28,21 @@ function getComputerChoice(){
     }
 
 }
+
+// get human choice
+// prompt user for input
+// standardize user input to lowercase
+// if user input doesn't match valid options, reprompt
+// return user's input
+function getHumanChoice(){
+    const humanChoice = prompt("Choose rock, paper, or scissors!").toLowerCase();
+
+    const validChoices = ["rock", "paper", "scissors"];
+
+    if(!validChoices.includes(humanChoice)){
+        getHumanChoice();
+    }
+
+    return humanChoice;
+
+}
