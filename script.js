@@ -7,6 +7,10 @@
 // play five rounds
 // determine winner of game
 
+// track each player's score
+let computerScore = 0;
+let humanScore = 0;
+
 function getComputerChoice(){
     // randomly return rock, paper, or scissors
 
