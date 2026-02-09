@@ -92,6 +92,10 @@ function playRound(computerChoice, humanChoice){
     }
 }
 
+playRound(getComputerChoice(), getHumanChoice());
+console.log(computerScore);
+console.log(humanScore);
+
 // game logic
 // play five rounds
 // compare scores, determine game winner
