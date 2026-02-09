@@ -46,3 +46,12 @@ function getHumanChoice(){
     return humanChoice;
 
 }
+
+// round logic
+// get comp and human choices
+// compare both, determine round winner
+// increment winner's score
+
+// game logic
+// play five rounds
+// compare scores, determine game winner
