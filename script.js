@@ -94,10 +94,25 @@ function playRound(computerChoice, humanChoice){
     }
 }
 
-playRound(getComputerChoice(), getHumanChoice());
-console.log(`Computer Score: ${computerScore}`);
-console.log(`Human Score: ${humanScore}`);
-
 // game logic
-// play five rounds
-// compare scores, determine game winner
+// new function playGame
+// call playRound five times
+// each round, the score will increase for the winner
+// after five rounds, compare scores, determine game winner
+function playGame(){
+
+    for(i = 1; i < 6; i++){
+        playRound(getComputerChoice(), getHumanChoice());
+        console.log(`Round ${i}`)
+        console.log(`Computer Score: ${computerScore}`);
+        console.log(`Human Score: ${humanScore}`);
+    }
+
+    if(computerScore > humanScore){
+        console.log("Computer Wins!");
+    } else if(computerScore < humanScore){
+        console.log("Human wins!");
+    } else console.log("Tie!");
+}
+
+playGame();
