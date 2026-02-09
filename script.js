@@ -35,7 +35,12 @@ function getComputerChoice(){
 // if user input doesn't match valid options, reprompt
 // return user's input
 function getHumanChoice(){
-    const humanChoice = prompt("Choose rock, paper, or scissors!").toLowerCase();
+    let humanChoice = prompt("Choose rock, paper, or scissors!");
+
+    if(humanChoice !== null){
+        console.log("human choice is not null");
+        humanChoice = humanChoice.toLowerCase();
+    } else return "User canceled";
 
     const validChoices = ["rock", "paper", "scissors"];
 
