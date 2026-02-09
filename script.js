@@ -107,11 +107,11 @@ function playRound(computerChoice, humanChoice){
 function playGame(){
 
     for(i = 1; i < 6; i++){
+        console.log(`Round ${i}`);
         if(playRound(getComputerChoice(), getHumanChoice()) === null){
             return console.log("Game quit, refresh page to try again.");
             break;
         } else {
-            console.log(`Round ${i}`);
             console.log(`Computer Score: ${computerScore}`);
             console.log(`Human Score: ${humanScore}`);
         }
