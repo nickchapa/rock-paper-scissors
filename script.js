@@ -52,6 +52,46 @@ function getHumanChoice(){
 // compare both, determine round winner
 // increment winner's score
 
+function playRound(computerChoice, humanChoice){
+    
+    // compare
+    // check for tie first
+    if(computerChoice === humanChoice){
+        console.log("Tie! No points awarded this round.");
+    }
+
+    // check each possible condition
+    if(computerChoice === "rock"){
+        if(humanChoice === "scissors"){
+            console.log("Computer wins round!");
+            computerScore++;
+        } else if(humanChoice === "paper"){
+            console.log("Human wins round!");
+            humanScore++;
+        }
+    }
+
+    if(computerChoice === "paper"){
+        if(humanChoice === "rock"){
+            console.log("Computer wins round!");
+            computerScore++;
+        } else if(humanChoice === "scissors"){
+            console.log("Human wins round!");
+            humanScore++;
+        }
+    }
+
+    if(computerChoice === "scissors"){
+        if(humanChoice === "paper"){
+            console.log("Computer wins round!");
+            computerScore++;
+        } else if(humanChoice === "rock"){
+            console.log("Human wins round!");
+            humanScore++;
+        }
+    }
+}
+
 // game logic
 // play five rounds
 // compare scores, determine game winner
