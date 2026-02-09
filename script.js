@@ -98,8 +98,8 @@ function playRound(computerChoice, humanChoice){
 }
 
 playRound(getComputerChoice(), getHumanChoice());
-console.log(computerScore);
-console.log(humanScore);
+console.log(`Computer Score: ${computerScore}`);
+console.log(`Human Score: ${humanScore}`);
 
 // game logic
 // play five rounds
