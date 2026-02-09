@@ -44,7 +44,9 @@ function getHumanChoice(){
             console.log("Please select rock, paper, or scissors.")
             getHumanChoice();
         }
-    } else return console.log("User canceled");
+    } else {
+        return null;
+    }
     
     return humanChoice;
 }
@@ -58,6 +60,9 @@ function playRound(computerChoice, humanChoice){
     
     // compare
     // check for tie first
+    if(humanChoice === null){
+        return null;
+    }
     if(computerChoice === humanChoice){
         return "Tie! No points awarded this round.";
     }
@@ -102,17 +107,23 @@ function playRound(computerChoice, humanChoice){
 function playGame(){
 
     for(i = 1; i < 6; i++){
-        playRound(getComputerChoice(), getHumanChoice());
-        console.log(`Round ${i}`)
-        console.log(`Computer Score: ${computerScore}`);
-        console.log(`Human Score: ${humanScore}`);
+        if(playRound(getComputerChoice(), getHumanChoice()) === null){
+            return console.log("Game quit, refresh page to try again.");
+            break;
+        } else {
+            console.log(`Round ${i}`);
+            console.log(`Computer Score: ${computerScore}`);
+            console.log(`Human Score: ${humanScore}`);
+        }
     }
 
     if(computerScore > humanScore){
         console.log("Computer Wins!");
     } else if(computerScore < humanScore){
         console.log("Human wins!");
-    } else console.log("Tie!");
+    } else if(computerScore === humanScore){
+        console.log("Tie!");
+    }
 }
 
 playGame();
