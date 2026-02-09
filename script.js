@@ -35,21 +35,18 @@ function getComputerChoice(){
 // if user input doesn't match valid options, reprompt
 // return user's input
 function getHumanChoice(){
+    const validChoices = ["rock", "paper", "scissors"];
     let humanChoice = prompt("Choose rock, paper, or scissors!");
 
     if(humanChoice !== null){
-        console.log("human choice is not null");
         humanChoice = humanChoice.toLowerCase();
-    } else return "User canceled";
-
-    const validChoices = ["rock", "paper", "scissors"];
-
-    if(!validChoices.includes(humanChoice)){
-        getHumanChoice();
-    }
-
+        if(!validChoices.includes(humanChoice)){
+            console.log("Please select rock, paper, or scissors.")
+            getHumanChoice();
+        }
+    } else return console.log("User canceled");
+    
     return humanChoice;
-
 }
 
 // round logic
