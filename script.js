@@ -99,6 +99,38 @@ function playRound(computerChoice, humanChoice){
     }
 }
 
+// UI Logic
+// create buttons
+
+const body = document.querySelector("body");
+
+const btnRock = document.createElement("button");
+const btnPaper = document.createElement("button");
+const btnScissors = document.createElement("button");
+
+btnRock.textContent = "rock";
+btnPaper.textContent = "paper";
+btnScissors.textContent = "scissors";
+
+body.appendChild(btnRock);
+body.appendChild(btnPaper);
+body.appendChild(btnScissors);
+
+// when button pressed, call playRound with corresponding humanChoice
+
+btnRock.addEventListener("click", (e) => {
+    playRound(getComputerChoice(), "rock");
+})
+
+btnPaper.addEventListener("click", (e) => {
+    playRound(getComputerChoice(), "paper");
+})
+
+btnScissors.addEventListener("click", (e) => {
+    playRound(getComputerChoice(), "scissors");
+})
+
+
 // game logic
 // new function playGame
 // call playRound five times
@@ -126,4 +158,4 @@ function playGame(){
     }
 }
 
-playGame();
+// playGame();
