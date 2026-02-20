@@ -64,7 +64,7 @@ function playRound(computerChoice, humanChoice){
         return null;
     }
     if(computerChoice === humanChoice){
-        return "Tie! No points awarded this round.";
+        return console.log("Tie! No points awarded this round.");
     }
 
     // check each possible condition
