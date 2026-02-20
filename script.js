@@ -57,43 +57,43 @@ function getHumanChoice(){
 // increment winner's score
 
 function playRound(computerChoice, humanChoice){
-    
+    choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
     // compare
     // check for tie first
     if(humanChoice === null){
         return null;
     }
     if(computerChoice === humanChoice){
-        return console.log("Tie! No points awarded this round.");
+        return resultsSpan.textContent = "Tie! No points awarded this round.";
     }
 
     // check each possible condition
     if(computerChoice === "rock"){
         if(humanChoice === "scissors"){
-            console.log("Computer wins round!");
+            resultsSpan.textContent = "Computer wins round!";
             return computerScore++;
         } else if(humanChoice === "paper"){
-            console.log("Human wins round!");
+            resultsSpan.textContent = "Human wins round!";
             return humanScore++;
         }
     }
 
     if(computerChoice === "paper"){
         if(humanChoice === "rock"){
-            console.log("Computer wins round!");
+            resultsSpan.textContent = "Computer wins round!";
             return computerScore++;
         } else if(humanChoice === "scissors"){
-            console.log("Human wins round!");
+            resultsSpan.textContent = "Human wins round!";
             return humanScore++;
         }
     }
 
     if(computerChoice === "scissors"){
         if(humanChoice === "paper"){
-            console.log("Computer wins round!");
+            resultsSpan.textContent = "Computer wins round!";
             return computerScore++;
         } else if(humanChoice === "rock"){
-            console.log("Human wins round!");
+            resultsSpan.textContent = "Human wins round!";
             return humanScore++;
         }
     }
@@ -102,7 +102,7 @@ function playRound(computerChoice, humanChoice){
 // UI Logic
 // create buttons
 
-const body = document.querySelector("body");
+const btnDiv = document.querySelector(".buttons");
 
 const btnRock = document.createElement("button");
 const btnPaper = document.createElement("button");
@@ -112,9 +112,13 @@ btnRock.textContent = "rock";
 btnPaper.textContent = "paper";
 btnScissors.textContent = "scissors";
 
-body.appendChild(btnRock);
-body.appendChild(btnPaper);
-body.appendChild(btnScissors);
+btnDiv.appendChild(btnRock);
+btnDiv.appendChild(btnPaper);
+btnDiv.appendChild(btnScissors);
+
+const choicesDiv = document.querySelector(".choices");
+const resultsDiv = document.querySelector(".resultsDiv");
+const resultsSpan = document.querySelector(".resultsSpan");
 
 // when button pressed, call playRound with corresponding humanChoice
 
