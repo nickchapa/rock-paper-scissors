@@ -60,7 +60,7 @@ function getHumanChoice(){
 function playRound(computerChoice, humanChoice){
     
     roundCounter++;
-    roundDiv.textContent = `Round ${roundCounter}`;
+    roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
 
     if (roundCounter >= 5){
         roundCounter = 0;
