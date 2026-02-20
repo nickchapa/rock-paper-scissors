@@ -10,6 +10,7 @@
 // track each player's score
 let computerScore = 0;
 let humanScore = 0;
+let roundCounter = 1;
 
 function getComputerChoice(){
     // randomly return rock, paper, or scissors
@@ -57,6 +58,15 @@ function getHumanChoice(){
 // increment winner's score
 
 function playRound(computerChoice, humanChoice){
+    
+    roundCounter++;
+    roundDiv.textContent = `Round ${roundCounter}`;
+
+    if (roundCounter >= 5){
+        roundCounter = 0;
+    }
+
+    
     choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
     // compare
     // check for tie first
@@ -102,6 +112,8 @@ function playRound(computerChoice, humanChoice){
 // UI Logic
 // create buttons
 
+const roundDiv = document.querySelector(".roundDiv");
+
 const btnDiv = document.querySelector(".buttons");
 
 const btnRock = document.createElement("button");
@@ -111,6 +123,7 @@ const btnScissors = document.createElement("button");
 btnRock.textContent = "rock";
 btnPaper.textContent = "paper";
 btnScissors.textContent = "scissors";
+roundDiv.textContent = `Round ${roundCounter}`;
 
 btnDiv.appendChild(btnRock);
 btnDiv.appendChild(btnPaper);
@@ -134,12 +147,7 @@ btnScissors.addEventListener("click", (e) => {
     playRound(getComputerChoice(), "scissors");
 })
 
-
-// game logic
-// new function playGame
-// call playRound five times
-// each round, the score will increase for the winner
-// after five rounds, compare scores, determine game winner
+/*
 function playGame(){
 
     for(i = 1; i < 6; i++){
@@ -163,3 +171,4 @@ function playGame(){
 }
 
 // playGame();
+*/
