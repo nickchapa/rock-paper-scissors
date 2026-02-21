@@ -40,7 +40,7 @@ function playRound(computerChoice, humanChoice){
     choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
 
     if(computerChoice === humanChoice){
-        return resultsSpan.textContent = "Tie! No points awarded this round.";
+        resultsSpan.textContent = "Tie! No points awarded this round.";
     }
 
     if(computerChoice === "rock"){
