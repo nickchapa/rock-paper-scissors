@@ -18,23 +18,6 @@ function getComputerChoice(){
 
 }
 
-function getHumanChoice(){
-    const validChoices = ["rock", "paper", "scissors"];
-    let humanChoice = prompt("Choose rock, paper, or scissors!");
-
-    if(humanChoice !== null){
-        humanChoice = humanChoice.toLowerCase();
-        if(!validChoices.includes(humanChoice)){
-            console.log("Please select rock, paper, or scissors.")
-            getHumanChoice();
-        }
-    } else {
-        return null;
-    }
-    
-    return humanChoice;
-}
-
 function playRound(computerChoice, humanChoice){
     winnerDiv.textContent = ``;
     choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
