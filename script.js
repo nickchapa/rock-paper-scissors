@@ -97,7 +97,7 @@ const btnScissors = document.createElement("button");
 btnRock.textContent = "rock";
 btnPaper.textContent = "paper";
 btnScissors.textContent = "scissors";
-roundDiv.textContent = `Round ${roundCounter}`;
+roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
 
 btnDiv.appendChild(btnRock);
 btnDiv.appendChild(btnPaper);
