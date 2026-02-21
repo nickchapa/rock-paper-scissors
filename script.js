@@ -62,8 +62,11 @@ function playRound(computerChoice, humanChoice){
     roundCounter++;
     roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
 
-    if (roundCounter >= 5){
-        roundCounter = 0;
+    if(computerScore == 5){
+    winnerDiv.textContent = `Computer wins!`;
+    }
+    if(humanScore == 5){
+    winnerDiv.textContent = `Human wins!`;
     }
 
     
@@ -132,6 +135,7 @@ btnDiv.appendChild(btnScissors);
 const choicesDiv = document.querySelector(".choices");
 const resultsDiv = document.querySelector(".resultsDiv");
 const resultsSpan = document.querySelector(".resultsSpan");
+const winnerDiv = document.querySelector(".winnerDiv");
 
 // when button pressed, call playRound with corresponding humanChoice
 
