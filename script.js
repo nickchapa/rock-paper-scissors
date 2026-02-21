@@ -58,7 +58,7 @@ function getHumanChoice(){
 // increment winner's score
 
 function playRound(computerChoice, humanChoice){
-        
+    winnerDiv.textContent = ``;
     choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
     // compare
     // check for tie first
@@ -97,8 +97,9 @@ function playRound(computerChoice, humanChoice){
     }
     
     roundCounter++;
-    
+
     // end of game logic
+    
     if(computerScore == 5){
         winnerDiv.textContent = `Computer wins game!`;
     }
@@ -109,7 +110,6 @@ function playRound(computerChoice, humanChoice){
         roundCounter = 1;
         computerScore = 0;
         humanScore = 0;
-        console.log("roundCounter should reset");
     }
 
     roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
