@@ -58,18 +58,7 @@ function getHumanChoice(){
 // increment winner's score
 
 function playRound(computerChoice, humanChoice){
-    
-    roundCounter++;
-    roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
-
-    if(computerScore == 5){
-    winnerDiv.textContent = `Computer wins!`;
-    }
-    if(humanScore == 5){
-    winnerDiv.textContent = `Human wins!`;
-    }
-
-    
+        
     choicesDiv.textContent = `CPU Choice: ${computerChoice} || Human Choice: ${humanChoice}`;
     // compare
     // check for tie first
@@ -84,32 +73,46 @@ function playRound(computerChoice, humanChoice){
     if(computerChoice === "rock"){
         if(humanChoice === "scissors"){
             resultsSpan.textContent = "Computer wins round!";
-            return computerScore++;
+            computerScore++;
         } else if(humanChoice === "paper"){
             resultsSpan.textContent = "Human wins round!";
-            return humanScore++;
+            humanScore++;
         }
-    }
-
-    if(computerChoice === "paper"){
+    } else if(computerChoice === "paper"){
         if(humanChoice === "rock"){
             resultsSpan.textContent = "Computer wins round!";
-            return computerScore++;
+            computerScore++;
         } else if(humanChoice === "scissors"){
             resultsSpan.textContent = "Human wins round!";
-            return humanScore++;
+            humanScore++;
         }
-    }
-
-    if(computerChoice === "scissors"){
+    } else if(computerChoice === "scissors"){
         if(humanChoice === "paper"){
             resultsSpan.textContent = "Computer wins round!";
-            return computerScore++;
+            computerScore++;
         } else if(humanChoice === "rock"){
             resultsSpan.textContent = "Human wins round!";
-            return humanScore++;
+            humanScore++;
         }
     }
+    
+    roundCounter++;
+    
+    // end of game logic
+    if(computerScore == 5){
+        winnerDiv.textContent = `Computer wins game!`;
+    }
+    if(humanScore == 5){
+        winnerDiv.textContent = `Human wins game!`;
+    }
+    if(computerScore == 5 || humanScore == 5){
+        roundCounter = 1;
+        computerScore = 0;
+        humanScore = 0;
+        console.log("roundCounter should reset");
+    }
+
+    roundDiv.textContent = `Round ${roundCounter} Computer Score: ${computerScore} Human Score: ${humanScore}`;
 }
 
 // UI Logic
